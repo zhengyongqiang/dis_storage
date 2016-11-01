@@ -12,6 +12,7 @@
 int main(int argc, char *argv[])
 {
 	LOG("111","111", "111");
+	LOG("222","222", "222");
 	int fd[2] = {0};
 	char buf[1024] = {0};
 	ssize_t buf_len = 0;
