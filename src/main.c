@@ -11,6 +11,7 @@
 
 int main(int argc, char *argv[])
 {
+	LOG("111","111", "111");
 	int fd[2] = {0};
 	char buf[1024] = {0};
 	ssize_t buf_len = 0;
@@ -30,7 +31,7 @@ int main(int argc, char *argv[])
 	pid_t pid = fork();
 	if (0 == pid)
 	{
-		//×Ó½ø³Ì
+		//Ã—Ã“Â½Ã¸Â³ÃŒ
 		close(fd[0]);
 		dup2(fd[1], STDOUT_FILENO);
 		execl
@@ -45,7 +46,7 @@ int main(int argc, char *argv[])
 	}
 	else if (0 < pid)
 	{
-		//¸¸½ø³Ì
+		//Â¸Â¸Â½Ã¸Â³ÃŒ
 		close(fd[1]);
 		wait(NULL);
 		buf_len = read(fd[0], buf, sizeof(buf));
